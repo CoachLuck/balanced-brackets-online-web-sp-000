@@ -78,7 +78,7 @@ function sleep(ms) {
 var loopTime = new Date().getTime()
 var crazyLong = insaneLong + insaneLong + insaneLong + insaneLong
 while (crazyLong.length > 1) {
-  sleep(10)
+  sleep(100)
   console.log(crazyLong)
   isBalanced(crazyLong)
   crazyLong = crazyLong.substring(1)
