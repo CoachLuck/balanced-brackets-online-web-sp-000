@@ -80,7 +80,6 @@ var crazyLong = insaneLong + insaneLong + insaneLong + insaneLong
 var loopTime = new Date().getTime()
 while (crazyLong.length > 1) {
   sleep(1)
-  console.log(crazyLong)
   isBalanced(crazyLong)
   crazyLong = crazyLong.substring(1)
 }
