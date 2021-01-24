@@ -5,6 +5,7 @@ function isBalanced(str) {
 }
 
 function isBal(str, openKey, idx) {
+  console.log(str)
   if (!close.has(str[0])) return false
 
   let cur = str[idx]
