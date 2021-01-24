@@ -56,7 +56,7 @@ function isOpen(c) {
   return c == "{" || c == "[" || c == "("
 }
 
-let insaneLong = "()[]()[]()[]()[]()[]()[[]](())[](())[]()[]()[]()[]()[]()[]()[]()[]()[]()[]()[]"
+let insaneLong = "()[](({}))[[]](())[[]]()[({})]()[{}]()[[]](())[](())[]()[]()[]()[]()[]()[]()[]()[]()[]()[]()[]"
 var time = new Date().getTime();
 console.log("Starting tests...")
 console.log(1, isBalanced("()[]"), "to be true")
