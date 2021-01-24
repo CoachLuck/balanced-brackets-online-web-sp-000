@@ -1,4 +1,4 @@
-let close = new Map([['{', '}'], ['(',')'], ['[',']']])
+let close = new Map([ ['{', '}'], ['(',')'], ['[',']'] ])
 
 function isBalanced(str) {
   return isBal(str, str[0], 0)
@@ -8,22 +8,16 @@ function isBal(str, openKey, idx) {
   if (!close.has(str[0])) return false
 
   let cur = str[idx]
-  let next = str[idx + 1]
-  let prev = str[idx - 1]
   if (close.has(cur)) {
-    if (next == close.get(cur)) {
-      str = str.substring(0, idx) + str.slice(idx + 2)
+    if (str[idx + 1] == close.get(cur)) {
+      str = str.slice(0, idx) + str.slice(idx + 2)
       return str.length > 1 ? isBal(str, str[0], 0) : true
     }
 
     return isBal(str, cur, idx + 1)
   }
 
-  return close.get(prev) != cur ? isBal(str, prev, idx + 1) : false
-}
-
-function isOpen(c) {
-  return c == "{" || c == "[" || c == "("
+  return close.get(str[idx - 1]) != cur ? isBal(str, prev, idx + 1) : false
 }
 
 let insaneLong = "()[](({}))[[]](())[[]]()[({})]()[{}]()[[]](())[](())[]()[]()[]()[]()[]()[]()[]()[]()[]()[]()[]"
