@@ -47,6 +47,10 @@ function getClose(c) {
   }
 }
 
+function isClose(c) {
+  return c == "]" || c == ")" || c == "}"
+}
+
 function isOpen(c) {
   return c == "{" || c == "[" || c == "("
 }
