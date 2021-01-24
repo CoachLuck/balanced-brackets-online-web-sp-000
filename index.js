@@ -6,7 +6,7 @@ function isBalanced(str) {
 
 // function isBal(str, openKey, idx) {
 //   if (!close.has(str[0])) return false
-// 
+//
 //   let cur = str[idx]
 //   let next = str[idx + 1]
 //   let prev = str[idx - 1]
@@ -15,10 +15,10 @@ function isBalanced(str) {
 //       str = str.substring(0, idx) + str.slice(idx + 2)
 //       return str.length > 1 ? isBal(str, str[0], 0) : true
 //     }
-// 
+//
 //     return isBal(str, cur, idx + 1)
 //   }
-// 
+//
 //   return close.get(prev) != cur ? isBal(str, prev, idx + 1) : false
 // }
 
