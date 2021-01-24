@@ -75,23 +75,10 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function demo() {
-  console.log('Taking a break...');
-  await sleep(2000);
-  console.log('Two seconds later, showing sleep in a loop...');
-
-  // Sleep in loop
-  for (let i = 0; i < 5; i++) {
-    if (i === 3)
-      await sleep(2000);
-    console.log(i);
-  }
-}
-
 var loopTime = new Date().getTime()
 var crazyLong = insaneLong + insaneLong + insaneLong + insaneLong
 while (crazyLong.length > 1) {
-  sleep(1)
+  sleep(10)
   console.log(crazyLong)
   isBalanced(crazyLong)
   crazyLong = crazyLong.substring(1)
