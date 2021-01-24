@@ -73,7 +73,7 @@ console.log(`Done (${newTime} ms)`)
 
 
 var loopTime = new Date().getTime()
-var crazyLong = insaneLong + insaneLong + insaneLong + insaneLong
+var crazyLong = insaneLong * insaneLong * insaneLong + insaneLong
 while (crazyLong.length > 1) {
   isBalanced(crazyLong)
   crazyLong = crazyLong.substring(1)
