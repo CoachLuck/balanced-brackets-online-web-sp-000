@@ -76,8 +76,8 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-var loopTime = new Date().getTime()
 var crazyLong = insaneLong + insaneLong + insaneLong + insaneLong
+var loopTime = new Date().getTime()
 while (crazyLong.length > 1) {
   sleep(1)
   console.log(crazyLong)
