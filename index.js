@@ -1,3 +1,4 @@
+let close = new Map([['{', '}'], ['(',')'], ['[',']']])
 function isBalanced(str) {
   return isBal(str, str[0], 0)
 }
@@ -9,7 +10,7 @@ function isBal(str, openKey, idx) {
   let next = str[idx + 1]
   let prev = str[idx - 1]
   if (isOpen(cur)) {
-    if (next == getClose(cur)) {
+    if (next == close[cur]) {
       str = str.substring(0, idx) + str.slice(idx + 2)
       return str.length > 1 ? isBal(str, str[0], 0) : true
     }
@@ -17,8 +18,26 @@ function isBal(str, openKey, idx) {
     return isBal(str, cur, idx + 1)
   }
 
-  return getClose(prev) != cur ? isBal(str, prev, idx + 1) : false
+  return close[prev] != cur ? isBal(str, prev, idx + 1) : false
 }
+
+// function isBal(str, openKey, idx) {
+//   if (isClose(str[0])) return false
+//
+//   let cur = str[idx]
+//   let next = str[idx + 1]
+//   let prev = str[idx - 1]
+//   if (isOpen(cur)) {
+//     if (next == getClose(cur)) {
+//       str = str.substring(0, idx) + str.slice(idx + 2)
+//       return str.length > 1 ? isBal(str, str[0], 0) : true
+//     }
+//
+//     return isBal(str, cur, idx + 1)
+//   }
+//
+//   return getClose(prev) != cur ? isBal(str, prev, idx + 1) : false
+// }
 
 function getClose(c) {
   switch (c) {
@@ -30,10 +49,6 @@ function getClose(c) {
 
 function isOpen(c) {
   return c == "{" || c == "[" || c == "("
-}
-
-function isClose(c) {
-  return c == "}" || c == "]" || c == ")"
 }
 
 let insaneLong = "()[]()[]()[]()[]()[]()[[]](())[](())[]()[]()[]()[]()[]()[]()[]()[]()[]()[]()[]"
