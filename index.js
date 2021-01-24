@@ -18,7 +18,7 @@ function isBal(str, openKey, idx) {
     return isBal(str, cur, idx + 1)
   }
 
-  return close[prev] != cur ? isBal(str, prev, idx + 1) : false
+  return close.get(prev) != cur ? isBal(str, prev, idx + 1) : false
 }
 
 // function isBal(str, openKey, idx) {
