@@ -70,3 +70,9 @@ console.log(8, isBalanced(insaneLong), "to be true")
 console.log(9, isBalanced(insaneLong + "}" + insaneLong), "to be false")
 var newTime = new Date().getTime() - time
 console.log(`Done (${newTime} ms)`)
+
+
+var loopTime = new Date().getTime()
+
+var endTime = new Date().getTime() - loopTime
+console.log(`Loop Time: (${endTime} ms)`)
