@@ -4,7 +4,7 @@ function isBalanced(str) {
 }
 
 function isBal(str, openKey, idx) {
-  if (close.has(str[0])) return false
+  if (isClose(str[0])) return false
 
   let cur = str[idx]
   let next = str[idx + 1]
