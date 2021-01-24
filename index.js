@@ -10,7 +10,7 @@ function isBal(str, openKey, idx) {
   let next = str[idx + 1]
   let prev = str[idx - 1]
   if (isOpen(cur)) {
-    if (next == close[cur]) {
+    if (next == close.get(cur)) {
       str = str.substring(0, idx) + str.slice(idx + 2)
       return str.length > 1 ? isBal(str, str[0], 0) : true
     }
