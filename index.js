@@ -1,4 +1,5 @@
 let close = new Map([['{', '}'], ['(',')'], ['[',']']])
+
 function isBalanced(str) {
   return isBal(str, str[0], 0)
 }
