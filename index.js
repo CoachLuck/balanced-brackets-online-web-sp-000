@@ -17,7 +17,8 @@ function isBal(str, openKey, idx) {
     return isBal(str, cur, idx + 1)
   }
 
-  return close.get(str[idx - 1]) != cur ? isBal(str, prev, idx + 1) : false
+  let prev = str[idx - 1]
+  return close.get(prev) != cur ? isBal(str, prev, idx + 1) : false
 }
 
 let insaneLong = "()[](({}))[[]](())[[]]()[({})]()[{}]()[[]](())[](())[]()[]()[]()[]()[]()[]()[]()[]()[]()[]()[]"
